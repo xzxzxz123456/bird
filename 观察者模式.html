@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+
+
+<script>
+    // 狗大叫一声 叫醒了主人 吓跑了小偷  
+
+    var dog = {
+        jiao:function(){
+            console.log("汪汪汪");
+            listeners.forEach(function(fn){
+                fn();
+            })
+        }
+    }
+    var zhuren = {
+        xingle : function(){
+            console.log("主人醒了")
+        }
+    }
+    var xiaotou = {
+        paole :function(){
+            console.log("小偷跑了")
+        }
+    }
+
+
+    // 定义一个数组 去接受订阅  
+    var listeners = [];
+
+    //定义一个添加 订阅的方法  
+
+    function add(fn){
+        listeners.push(fn)
+    }
+
+    //添加订阅
+     
+    add(zhuren.xingle)
+    add(xiaotou.paole)
+
+    //狗叫了一声
+    dog.jiao();
+
+
+
+
+</script>

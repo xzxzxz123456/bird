@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <canvas id="cv"></canvas>
+
+</body>
+
+</html>
+<script src="./js/fly.js"></script>
+<script src="./js/birds.js"></script>
+<script src="./js/sky.js"></script>
+<script src="./js/land.js"></script>
+<script src="./js/pipe.js"></script>
+<script src="./js/game.js"></script>
+<script>
+    var cv = document.getElementById("cv")
+    cv.height = 600;
+    cv.width = 800;
+    cv.style.border = '1px solid red';
+    var context = cv.getContext("2d")
+    
+    var game = fly.getGame()
+    game.play()
+
+
+
+    // var imgsArr = ['birds', 'land', 'pipe1', 'pipe2', 'sky'];
+    // fly.loadImage(imgsArr, function (obj) {
+
+        //定义时间
+        // var lateTime = new Date();
+        // var timer = 0;
+        // var flag = true
+
+
+        // var arr = []
+
+        // //创建天空对象那个
+        // for (var i = 0; i < 2; i++) {
+        //     var sky = new fly.Sky({
+        //         img: obj.sky,
+        //         ctx: context,
+        //         x: i * obj.sky.width
+        //     })
+        //     arr.push(sky)
+
+        // };
+        // //创建管道
+        // for (var i = 0; i < 6; i++) {
+        //     var pipe = new fly.Pipe({
+        //         imgT: obj.pipe2,
+        //         imgB: obj.pipe1,
+        //         ctx: context,
+        //         x: i * obj.pipe1.width * 3 + 500
+        //     })
+        //     arr.push(pipe)
+        // }
+        // //创建 陆地
+        // for (var i = 0; i < 4; i++) {
+        //     var land = new fly.Land({
+        //         img: obj.land,
+        //         ctx: context,
+        //         x: i * obj.land.width
+        //     })
+        //     arr.push(land)
+
+        // }
+
+        // //创建小鸟   
+        // var birds = new fly.Birds({
+        //     birds: obj.birds,
+        //     context: context
+        // });
+
+
+        // (function rander() {
+        //     //保存状态
+        //     context.save();
+        //     // 清空画布
+        //     context.clearRect(0, 0, cv.width, cv.height);
+        //     // 开启新路径
+        //     context.beginPath();
+        
+        //     // 获取时间
+        //     var nowTime = new Date();
+        //     timer = nowTime - lateTime;
+        //     lateTime = nowTime;
+
+
+        //     //渲染
+        //     arr.forEach(function (value) {
+        //         value.render(timer);
+        //     })
+        //     // console.log(arr)
+
+        //     // 小鸟 渲染 
+        //     birds.render(timer);
+
+        //     if (birds.y - 10 < 0 || birds.y + 10 > (cv.height - obj.land.height) ) {
+        //         flag = false;
+        //     }
+        //     if( context.isPointInPath(birds.x, birds.y) ){
+        //         flag= false;
+        //     }
+
+
+
+        //     //恢复状态
+        //     context.restore();
+        //     if (flag) {
+        //         // 动画实现方法
+        //         requestAnimationFrame(rander);
+        //     }
+        // })()
+
+        // cv.onclick = function () {
+        //     birds.v0 = -0.3;
+        // }
+
+
+    // })
+
+</script>
